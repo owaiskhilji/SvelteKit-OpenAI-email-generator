@@ -8,12 +8,9 @@ let error = '';
 let emailResponse = '';
 let loading = false
 
-console.log("emailResponse", emailResponse)
-
 
 async function generateEmail(){
   error = ''
-
 if(scenario === '' || tone === 'Select Tone'){
   error = 'Please fill in all fields.'
   loading = false
@@ -30,15 +27,26 @@ const response = await axios.post('/api/generate-email', {
 if(response.status !== 200){
   error = 'Response Error, please try again.'
   loading = false
-
   return
 }
-console.log("Response", response)
   emailResponse = response.data.email
-
   loading = false
   scenario = ''
   tone = 'Select Tone'
+let emails = emailResponse
+ localStorage.setItem('email', emails);
+//  console.log("Emails:",setEmail)
+ const allEmails = JSON.parse(localStorage.getItem('emails') || "[]");
+ 
+ allEmails.push(emails);
+ if (allEmails.length > 6) {
+   allEmails.shift(); // Remove the oldest email if more than 6
+ }
+
+ let saveEmails = JSON.stringify(allEmails);
+  localStorage.setItem('emails', saveEmails);
+  console.log("Emails:", saveEmails)
+
 
 } catch (err) {
   console.error(err)
@@ -110,5 +118,6 @@ finally{
       <p>{emailResponse}</p>
     </div>
   {/if}
+
 </div>
 </div>
