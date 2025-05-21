@@ -30,11 +30,15 @@ const response = await axios.post('/api/generate-email', {
 if(response.status !== 200){
   error = 'Response Error, please try again.'
   loading = false
+
   return
 }
 console.log("Response", response)
   emailResponse = response.data.email
+
   loading = false
+  scenario = ''
+  tone = 'Select Tone'
 
 } catch (err) {
   console.error(err)
@@ -51,11 +55,11 @@ finally{
 
 <div class="min-h-scree">
 <div class="max-w-md mx-auto p-4">
-<div> 
+<div class="flex items-center justify-center mt-8"> 
   <h1 class="text-2xl font-bold">Smart Email Writer</h1>
 </div> 
 
- <div>
+ <div class="mt-8">
 
    <label for="scenario">Enter the Scenario:</label>
    <textarea 
@@ -101,7 +105,7 @@ finally{
   {/if}
 
   {#if emailResponse}
-    <div class="mt-6 p-4 bg-gray-100 rounded shadow-lg">
+    <div class=" mt-6 p-4 bg-gray-100  rounded shadow-lg w-full">
       <h2 class="font-bold mb-2">Generated Email:</h2>
       <p>{emailResponse}</p>
     </div>
