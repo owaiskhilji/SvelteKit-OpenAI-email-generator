@@ -57,8 +57,10 @@ finally{
 
  <div>
 
-   <label>Enter the Scenario:</label>
+   <label for="scenario">Enter the Scenario:</label>
    <textarea 
+    id="scenario"
+      required
    bind:value={scenario}
     rows="4"
     placeholder="Describe the scenario for the email you want to generate."
@@ -67,8 +69,10 @@ finally{
   </div>
   
 <div>
-  <label>Tones:</label>
+  <label for="tones">Tones:</label>
   <select 
+  id="tones"
+  required
   bind:value={tone} 
   class="border p-2 w-full mb-4 rounded-md">
   <option selected disabled>Select Tone</option>

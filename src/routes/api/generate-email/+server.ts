@@ -1,6 +1,6 @@
+import { OPENAI_API_KEY } from '$env/static/private';
 import type { RequestHandler } from '@sveltejs/kit';
 import { OpenAI } from 'openai';
-import { OPENAI_API_KEY } from '$env/static/private';
 
 
 const openai = new OpenAI({
