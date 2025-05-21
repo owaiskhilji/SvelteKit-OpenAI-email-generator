@@ -12,6 +12,7 @@ console.log("emailResponse", emailResponse)
 
 
 async function generateEmail(){
+  error = ''
 
 if(scenario === '' || tone === 'Select Tone'){
   error = 'Please fill in all fields.'
@@ -21,7 +22,6 @@ if(scenario === '' || tone === 'Select Tone'){
 
   try{
     loading = true
-    error = ''
     emailResponse = ''
 const response = await axios.post('/api/generate-email', {
   scenario,
