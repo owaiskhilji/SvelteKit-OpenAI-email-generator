@@ -47,18 +47,18 @@
 
 
 
-<div class="min-h-screen w-full bg-radial-[at_50%_50%] from-[#7f8f4a] to-[#080904] to-40% flex items-center justify-center py-28">
+<div class="min-h-screen w-full bg-radial-[at_50%_50%] from-[#7f8f4a] to-[#080904] to-40% flex items-center justify-center py-24">
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <!-- Card 01  -->
   {#each emailsData as item, i}
   <div class="bg-gradient-to-b from-[#0b0b0b] to-[#3a3f1c] text-white p-6 rounded-xl shadow-lg w-72 lg:w-80 flex flex-col h-[450px]">
-    <h2 class="text-2xl font-bold">
+    <h2 class="font-sans text-2xl font-bold">
       {item.subject}
 
     </h2>
-    <p class="text-lime-400 font-semibold text-lg mt-1">$12.50/m</p>
+    <!-- <p class="text-lime-400 font-semibold text-lg mt-1">$12.50/m</p> -->
 
-    <p class="mt-4 text-sm max-length-500">
+    <p class="mt-8 text-sm max-length-500">
       {item.body.length > 400 ? item.body.slice(0, 400) + '......' : item.body}
     </p>
 
