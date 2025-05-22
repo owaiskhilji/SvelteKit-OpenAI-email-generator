@@ -2,8 +2,6 @@
  <script>
 import axios from 'axios';
 import { emailStore } from '../../store/emailStore';
-import {goto} from '$app/navigation';
-
 
 let scenario = '';
 let tone = 'Select Tone';
@@ -53,7 +51,7 @@ emailStore.set(allEmails)
   loading = false
   scenario = ''
   tone = 'Select Tone'
-goto('/getemail')
+
 
 } catch (err) {
   console.error(err)
