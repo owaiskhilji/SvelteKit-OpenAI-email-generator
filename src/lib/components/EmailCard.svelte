@@ -42,12 +42,7 @@
 
 
 
-
-
-
-
-
-<div class="min-h-screen w-full bg-radial-[at_50%_50%] from-[#7f8f4a] to-[#080904] to-40% flex items-center justify-center py-24">
+<div class="min-h-screen w-full bg-radial-[at_50%_50%] from-[#7f8f4a] to-[#080904] to-40% flex items-center justify-center py-24 mt-8">
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <!-- Card 01  -->
   {#each emailsData as item, i}
